@@ -14,8 +14,10 @@ after_success:
     - docker build -t konsta2106/multi-nginx ./nginx
     - docker build -t konsta2106/multi-calculator ./calculator
     - docker build -t konsta2106/multi-server ./server
+    
     # Login to docker cli
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
     # Push images to docker hub
     - docker push konsta2106/multi-client
     - docker push konsta2106/multi-nginx
