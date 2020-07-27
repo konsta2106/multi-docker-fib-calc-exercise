@@ -19,7 +19,7 @@ after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     # Push images to docker hub
-    - docker push konsta2106/multi-client
     - docker push konsta2106/multi-nginx
+    - docker push konsta2106/multi-client
     - docker push konsta2106/multi-calculator
     - docker push konsta2106/multi-server
