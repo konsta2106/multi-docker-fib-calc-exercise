@@ -10,7 +10,7 @@ script:
     - docker run konsta2106/react-test npm test -- --coverage
 
 after_success:
-    - docker build -t konsta2106/multi-react ./client
+    - docker build -t konsta2106/multi-client ./client
     - docker build -t konsta2106/multi-nginx ./nginx
     - docker build -t konsta2106/multi-calculator ./calculator
     - docker build -t konsta2106/multi-server ./server
@@ -20,6 +20,6 @@ after_success:
 
     # Push images to docker hub
     - docker push konsta2106/multi-nginx
-    - docker push konsta2106/multi-react
+    - docker push konsta2106/multi-client
     - docker push konsta2106/multi-calculator
     - docker push konsta2106/multi-server
