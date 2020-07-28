@@ -24,7 +24,6 @@ after_success:
     - docker push konsta2106/multi-calculator
     - docker push konsta2106/multi-server
 
-    # Deploy section to aws
 deploy:
     provider: elasticbeanstalk
     region: eu-west-3
