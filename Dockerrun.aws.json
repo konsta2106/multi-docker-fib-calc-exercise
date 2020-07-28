@@ -1,0 +1,35 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "konsta2106/multi-client",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "konsta2106/multi-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "calculator",
+            "image": "konsta2106/multi-calculator",
+            "hostname": "calculator",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "konsta2106/multi-nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["client", "server"]
+        }
+    ]
+}

@@ -23,3 +23,17 @@ after_success:
     - docker push konsta2106/multi-client
     - docker push konsta2106/multi-calculator
     - docker push konsta2106/multi-server
+
+    # Deploy section to aws
+deploy:
+    provider: elasticbeanstalk
+    region: eu-west-3
+    app: multi-docker
+    env: MultiDocker-env
+    bucket_name: elasticbeanstalk-eu-west-3-721010426051
+    bucket_path: docker-multi
+    on:
+        branch: master
+    access_key_id: $WAS_ACCESS_KEY
+    secret_access_key:
+        secure: $AWS_SECRET_KEY
