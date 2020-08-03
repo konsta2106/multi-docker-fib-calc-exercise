@@ -13,10 +13,6 @@ class Counter extends Component {
         })
     }
 
-    counter = async () => {
-        
-    }
-
     render() {
         return (
             <div>
