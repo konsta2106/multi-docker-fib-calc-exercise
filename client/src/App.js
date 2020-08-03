@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import OtherPage from './OtherPage';
 import Fib from './Fib';
+import Counter from './Counter'
 
 class App extends Component {
   render() {
@@ -20,6 +21,9 @@ class App extends Component {
             <Route exact path="/" component={Fib} />
             <Route path="/otherpage" component={OtherPage} />
           </div>
+          <div>
+          <Counter />
+        </div>
         </div>
       </Router>
     );

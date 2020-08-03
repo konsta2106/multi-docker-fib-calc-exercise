@@ -34,10 +34,14 @@ const redisClient = redis.createClient({
     retry_strategy: () => 1000
 })
 const redisPublisher = redisClient.duplicate()
-
+let counter = 0
 //Express routes
 app.get('/', (req, res) => {
-    res.send('Test')
+    counter = counter + 1
+    let response = {
+        counter: counter
+    }
+    res.send(response)
 })
 
 app.get('/values/all', async (req, res) => {
